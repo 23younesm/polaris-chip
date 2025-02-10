@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Boilerplate for polaris chip">
+  <meta name="Description" content="Boilerplate for polaris chip and my-card components">
   <base href="/">
 
   <style>
@@ -16,8 +16,15 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
+
     polaris-chip {
       margin: 16px;
+    }
+
+    my-card {
+      margin: 16px;
+      display: inline-block;
+      vertical-align: top;
     }
   </style>
   <title>polaris-chip / my-card</title>
@@ -25,18 +32,47 @@
 
 <body>
   <h1>polaris-chip</h1>
-  <!-- this is going to do whatever the tag's defaults are -->
+  <!-- Polaris Chip examples -->
   <polaris-chip title="News of Record" link="https://psu.edu/"></polaris-chip>
   <polaris-chip title="Faculty and Staff"></polaris-chip>
   <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
   <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>my-card</h1>
-  <my-card></my-card>
+  <!-- My Card examples -->
+  <my-card 
+    title="Nature"
+    image="https://via.placeholder.com/300x200?text=Nature"
+    description="Explore the beauty of nature."
+    button-text="Discover">
+  </my-card>
 
-  <!-- this is what is bringing in the definition for this tag -->
-  <script type="module" src="./src/polaris-chip.js"></script>
-  <script type="module" src="./src/my-card.js"></script>
-</body>
+  <my-card 
+    title="Technology"
+    image="https://via.placeholder.com/300x200?text=Technology"
+    description="Stay updated with the latest tech trends."
+    button-text="Read More">
+  </my-card>
 
-</html>
+  <my-card 
+    title="Travel"
+    image="https://via.placeholder.com/300x200?text=Travel"
+    description="Embark on exciting journeys around the world."
+    button-text="Plan Trip">
+  </my-card>
+
+  <my-card 
+    title="Food"
+    image="https://via.placeholder.com/300x200?text=Food"
+    description="Discover delicious recipes and culinary tips."
+    button-text="Get Recipes">
+  </my-card>
+
+  <my-card 
+    title="Fitness"
+    image="https://via.placeholder.com/300x200?text=Fitness"
+    description="Achieve your health and fitness goals."
+    button-text="Start Workout">
+  </my-card>
+
+  <!-- Scri
