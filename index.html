@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Boilerplate for polaris chip and my-card components">
+  <meta name="Description" content="Boilerplate for polaris chip">
   <base href="/">
 
+  <!-- THIS IS WHERE TO ADD STYLES FOR SLOTTED STUFF -->
   <style>
     :root,
     html,
@@ -16,63 +17,68 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
-
     polaris-chip {
       margin: 16px;
+      --polaris-chip-background-color: azure;
+    }
+    a {
+      margin: 16px;
+      color: red;
+      background-color: azure;
+      padding: 50px;
+    }
+    p {
+      color: yellow;
+        margin: 10px 25px 10px 25px;
+        font-family: "Times New Roman", Times, serif;
     }
 
-    my-card {
-      margin: 16px;
-      display: inline-block;
-      vertical-align: top;
-    }
   </style>
   <title>polaris-chip / my-card</title>
 </head>
 
 <body>
   <h1>polaris-chip</h1>
-  <!-- Polaris Chip examples -->
+  <!-- this is going to do whatever the tag's defaults are -->
   <polaris-chip title="News of Record" link="https://psu.edu/"></polaris-chip>
   <polaris-chip title="Faculty and Staff"></polaris-chip>
   <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
   <polaris-chip title="Grants and donations"></polaris-chip>
 
+  <a href="https://psu.edu/" target="_blank">PSU</a>
+
   <h1>my-card</h1>
-  <!-- My Card examples -->
-  <my-card 
-    title="Nature"
-    image="https://via.placeholder.com/300x200?text=Nature"
-    description="Explore the beauty of nature."
-    button-text="Discover">
+
+  <button>Toggle</button>
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      const card = document.querySelector('my-card');
+      card.fancy = !card.fancy;
+    })
+  </script>
+
+  <my-card
+  title="Pennsylvania"
+  image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2e7PFM2ME2PX7j_9VKXhxYrrSPzpbnDgpKA&s"
+  link="www.pa.gov">
+  </my-card>
+  
+  <my-card
+  title="New Jersey"
+  image="https://media.istockphoto.com/id/1386543659/vector/new-jersey-map-icon.jpg?s=2048x2048&w=is&k=20&c=7MifF5GCmSBed93GKSn_Qp86p3D8GK3tmksEx-MXl5I="
+  link="www.nj.gov">
   </my-card>
 
-  <my-card 
-    title="Technology"
-    image="https://via.placeholder.com/300x200?text=Technology"
-    description="Stay updated with the latest tech trends."
-    button-text="Read More">
+  <my-card
+  title="New York"
+  image="https://worldpopulationreview.com/state-outlines/ny/outline-ny-1400w.png"
+  link="www.ny.gov">
   </my-card>
 
-  <my-card 
-    title="Travel"
-    image="https://via.placeholder.com/300x200?text=Travel"
-    description="Embark on exciting journeys around the world."
-    button-text="Plan Trip">
-  </my-card>
+  <!-- this is what is bringing in the definition for this tag -->
+  <script type="module" src="./src/polaris-chip.js"></script>
+  <script type="module" src="./src/my-card.js"></script>
+</body>
 
-  <my-card 
-    title="Food"
-    image="https://via.placeholder.com/300x200?text=Food"
-    description="Discover delicious recipes and culinary tips."
-    button-text="Get Recipes">
-  </my-card>
-
-  <my-card 
-    title="Fitness"
-    image="https://via.placeholder.com/300x200?text=Fitness"
-    description="Achieve your health and fitness goals."
-    button-text="Start Workout">
-  </my-card>
-
-  <!-- Scri
+</html>
