@@ -17,7 +17,9 @@ export class MyCard extends LitElement {
     super();
     this.title = "#";
     this.image = "#";
-    this.link = "#"; 
+    this.link = "#";
+    this.Ttitle = "#";
+    this.Btitle = "#"; 
     this.fancy = false;
   }
 
@@ -106,7 +108,12 @@ export class MyCard extends LitElement {
     <div id = "cardlist">
       <div class="card">
         <h1 class="cardheader"><b>${this.title}</b></h1>
-          <img src=${this.image} alt=${this.title} />
+          <meme-maker
+          alt=${this.title}
+          image-url=${this.image}
+          bottom-text=${this.Btitle}
+          top-text=${this.Ttitle}>
+          </meme-maker>>
           <details ?open="${this.fancy}" @toggle="${this.openChanged}">
             <summary>Description</summary>
             <div>
@@ -123,6 +130,8 @@ export class MyCard extends LitElement {
   static get properties() {
     return {
       title: { type: String },
+      Ttitle: { type: String },
+      Btitle: { type: String },
       image: { type: String },
       link: { type: String},
       fancy: { type: Boolean, reflect: true }
